@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Good Morning</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+            background-color: #ffebcd; /* Light background color */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+        #message {
+            font-size: 4em;
+            color: #4CAF50;
+            opacity: 0;
+            transform: translateY(-100px);
+            transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+        }
+        #message.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        #backgroundAudio {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="message">
+        <img src="YOUR_GOOD_MORNING_IMAGE_URL_HERE" alt="Good Morning">
+        <p>Good Morning! Have a great day!</p>
+    </div>
+    <audio id="backgroundAudio" autoplay loop>
+        <source src="YOUR_AUDIO_URL_HERE" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <script>
+        // JavaScript to handle animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const message = document.getElementById('message');
+            setTimeout(function() {
+                message.classList.add('visible');
+            }, 500); // Delay before animation starts
+        });
+    </script>
+</body>
+</html>
